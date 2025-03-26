@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.gradient-background {
+  background-color: rgb(29, 29, 29);
+  background-size: 180% 180%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-background h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.gradient-background .title {
+  color: white;
+}
+
+.tosInput {
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  display: flex;
+}
+
+.tosInput input {
+  border: 1px solid rgb(105, 105, 105);
+  color: white;
+}
+
+.tosInput .tosInputBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.tosInput button {
+  padding: 7px;
+  color: rgb(65, 65, 65);
+  border: none;
+  background-color: rgb(226, 226, 226);
+}
+
+.glassCard {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  overflow: hidden;
+  color: white;
+}
+
+.glassCard input,
+td,
+th {
+  padding: 5px;
+  border: 1px solid rgb(151, 151, 151);
+  height: 50px;
+  text-align: center;
+}
+
+.glassCard input {
+  border: none;
+}
+
+.gradient-background form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.gradient-background form button {
+  padding: 7px;
+  color: rgb(65, 65, 65);
+  border: none;
+  background-color: rgb(226, 226, 226);
+}
+
+.gradient-background form .response {
+  color: white;
+}
+
+.questionItem {
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+}
