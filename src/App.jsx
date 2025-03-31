@@ -17,6 +17,9 @@ const generationConfig = {
     items: {
       type: "object",
       properties: {
+        topic: {
+          type: "string",
+        },
         question: {
           type: "string",
         },
@@ -46,7 +49,7 @@ const generationConfig = {
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash-lite",
   systemInstruction:
-    "Create a quiz where the questions falls under the Bloom's Taxonomy Cognitive Domain. The structure of the quiz will be based on the specifications per topics given in the prompt. Ensure that all of the contents in the quiz are present in the document provided. For each questions, provide 4 multiple choices with only one correct answer and include the specification according to the Bloom's Taxonomy Cognitive Domain",
+    "Create a quiz where the questions falls under the Bloom's Taxonomy Cognitive Domain. The structure of the quiz will be based on the specifications per topics given in the prompt. Ensure that all of the contents in the quiz are present in the document provided. For each questions, provide 4 multiple choices with only one correct answer. Include the specification according to the Bloom's Taxonomy Cognitive Domain, and the topic which the question came from.",
   generationConfig: generationConfig,
 });
 
@@ -249,24 +252,24 @@ function App() {
           },
           prompt,
         ]);
-        console.log(result.response.text());
-        console.log(JSON.parse(result.response.text()));
+        // console.log(result.response.text());
+        // console.log(JSON.parse(result.response.text()));
         // setResponse(result.response.text());
         // setResponse(Array.from(result.response.text()));
         setQuiz(JSON.parse(result.response.text()));
 
-        console.log(quiz);
+        // console.log(quiz);
         // setResponse(JSON.stringify(result.response.text()));
       } catch (error) {
         console.error(error);
         setResponse(
-          "There seems to be a problem on our side. Please try again. " + error
+          "There seems to be a problem on our side. Please try again. "
         );
       }
     };
 
     reader.readAsDataURL(file);
-    console.log(prompt);
+    // console.log(prompt);
   };
 
   const removeRow = () => {
@@ -409,6 +412,10 @@ function App() {
                 {/* spec */}
                 <h3>
                   <b> Specification: {e.specification}</b>
+                </h3>
+                {/* topic */}
+                <h3>
+                  <b> Topic: {e.topic}</b>
                 </h3>
               </div>
             );
