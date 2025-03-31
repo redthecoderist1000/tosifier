@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { GoogleAIFileManager } from "@google/generative-ai/server";
 
 import "./App.css";
 const env = import.meta.env;
